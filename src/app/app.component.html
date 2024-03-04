@@ -1,1 +1,27 @@
-Hello
+<form #feedbackForm="ngForm" (submit)="onSubmit(feedbackForm.value)">
+  <div class="container">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="Username"
+        ngModel
+        name="username"
+      />
+    </div>
+    <label for="exampleFormControlInput1" class="form-label">Feedback</label>
+    <input
+      type="text"
+      class="form-control"
+      id="feedback"
+      placeholder="Feedback"
+      ngModel
+      name="feedback"
+    />
+    <div class="col-auto mt-3">
+      <button type="submit" class="btn btn-primary mb-3">Submit</button>
+    </div>
+  </div>
+</form>

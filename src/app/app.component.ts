@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { FeedbackService } from './services/feedback.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularExpressMongodb';
+
+  constructor(private serivce: FeedbackService) {
+    
+  }
+
+  onSubmit(formValue: FormsModule) {
+    this.serivce.getFeedBack().subscribe(res => {
+      alert(JSON.stringify(res))
+    })    
+  }
 }
